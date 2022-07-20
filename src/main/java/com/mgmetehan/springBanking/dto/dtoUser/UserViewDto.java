@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserViewDto {
-    private long id;
+    private Long id;
 
     private String username;
 

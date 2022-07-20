@@ -8,13 +8,14 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String username;
 
@@ -35,4 +36,13 @@ public class User {
     @Temporal(TemporalType.DATE)
     private Date createdAtDate=new Date();
 
+    public User(String username, String surname, String password, String identificationNumber, String city, String mobileNumber, String email) {
+        this.username = username;
+        this.surname = surname;
+        this.password = password;
+        this.identificationNumber = identificationNumber;
+        this.city = city;
+        this.mobileNumber = mobileNumber;
+        this.email = email;
+    }
 }
